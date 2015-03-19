@@ -39,7 +39,7 @@ Delete these files, our app is going to require a more sophisticated file struct
 
 Now create a file called **routes.js** at the root of your project, then create a directory called **client/** also at the project root, with sub-directories **views** and **includes**.
 
-**client/includes/** will contain contain files that will be used throughout our app, and **client/views/** will contain files contain files that are specific to certain views or pages of the app.
+**client/includes/** will contain contain files that will be used throughout our app, and **client/views/** will contain files that are specific to certain views or pages of the app.
 
 Inside **client/includes/** create a file called **main_layout.html**
 
