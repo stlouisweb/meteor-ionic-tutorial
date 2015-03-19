@@ -166,3 +166,4 @@ import line:
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 ```
  
+Now run the app again and you should have a pretty blue navbar with a super-cool slide-out menu.
