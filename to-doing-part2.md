@@ -126,7 +126,7 @@ This sets up the template for side menus, we are going to break out the actual m
     {{#ionSideMenus}}
 
         {{#ionSideMenu}}
-            <div class="bar bar-header bar-dark">
+            <div class="bar bar-header bar-positive">
                 <h1 class="title">Left Menu</h1>
             </div>
             <div class="content has-header">
