@@ -5,5 +5,5 @@
 ###[Tutorial step 1](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing.md)
 Setting up our development environment and getting started with meteor-ionic.
 
-###[Tutorial step 2](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing.md)
+###[Tutorial step 2](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing-part2.md)
 Building a mobile friendly view with meteor-ionic.
