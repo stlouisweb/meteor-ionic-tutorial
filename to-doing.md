@@ -39,4 +39,29 @@ Delete these files, our app is going to require a more sophisticated file struct
 
 Now create a file called **routes.js** at the root of your project, then create a directory called **client/** also at the project root, with sub-directories **views** and **includes**.
 
+Includes will contain contain files that will be used throughout our app, and views will contain files contain files that are specific to certain views or pages of the app.
+
+Inside **client/includes/** create a file called **main_layout.html**
+
+Add the following to **main_layout.html**:
+
+```html
+<head>
+	<title>To-Doing - Agile PM for your life</title>
+</head>
+
+<template name="mainLayout">
+	{{#ionBody}}
+		{{>yield}}
+	{{/ionBody}}
+</template>
+```
+
+This is our main template file, all our other templates will be inserted into the ``` {{>yield}} ``` This is an example example of Meteor's template inclusion syntax.
+
+``` {{#ionBody}} ``` is a meteor-ionic component that sets  up the necessary wrappers for our ionic templates.
+
+
+
+
    
