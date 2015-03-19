@@ -113,5 +113,18 @@ Router.map(function() {
 
 ```
 
+Now you can run meteor to build and serve the project by executing the ``` meteor ``` command from within your project directory.
+
+```
+cd path/to/todoing
+meteor
+```
+
+You can open the project in your browser by going to http://localhost:3000 (or another port if you specifed one when you started meteor), and you should see Hello World in the browser window.
+
+If you inspect the code you should see no errors in the console and looking at the source will show that our meteor-ionic component blocks added a bunch of divs with specific classes to format our page properly for ionic. 
+
+
+
 
    
