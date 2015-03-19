@@ -7,9 +7,14 @@ To-doing is a fairly simple but interactive app that is data and user-centric, w
 To-doing should also work well across platforms, as both a mobile app and a web app. Ionic is an excellent mobile front-end framework that works well in the browser and Meteor has a proven Ionic integration package.
 
 #### To get started we create a new meteor project
+Run the following from the command line in your development environment:
+
 ```
 meteor create todoing
 ```
+
+You will need to have [installed Meteor](https://www.meteor.com/install) for this to work.
+
 #### Then add the required packages for Ionic
 You can add these one by one with 
 ```
@@ -57,11 +62,40 @@ Add the following to **main_layout.html**:
 </template>
 ```
 
-This is our main template file, all our other templates will be inserted into the ``` {{>yield}} ``` This is an example example of Meteor's template inclusion syntax.
+This is our main template file, all our other templates will be inserted into the ``` {{>yield}} ``` block. This is an example example of Meteor's template inclusion syntax.
 
 ``` {{#ionBody}} ``` is a meteor-ionic component that sets  up the necessary wrappers for our ionic templates.
 
+Now its time to create our first view. Inside **client/views/** create a subdirectory **to-do** and inside **client/views/to-do/** create a file **todo.html**
 
+add the following to **todo.html**:
+
+```html
+<template name="toDo">
+	{{#ionContent}}
+		<p>Hello World</p>
+	{{/ionContent}}
+</template>
+```
+
+``` {{#ionContent}} ``` is another meteor-ionic component, you should generally wrap all of your templates in an ``` ionConent ``` block.
+
+Now it's time to configure the router. open up the **routes.js** file we created a the root of the project and add the following to configure the router to use our **mainLayout** template by default:
+
+```javascript
+Router.configure({
+	layoutTemplate: 'mainLayout'
+});
+```
+
+Below the ``` Router.configure ``` code add the following to hook up our **toDo** template to the index (/) route:
+
+```javascript
+Router.map(function() {
+	this.route('toDo', {
+		path: '/'
+	});
+}); 
 
 
    
