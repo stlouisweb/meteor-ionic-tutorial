@@ -60,7 +60,7 @@ Now to make this all look right we need to load the ionic css. The meteor-ionic 
 
 Create a file in **client/includes/** called **todoing.scss** and the following line to that file:
 
-```
+```scss
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 ```
 
