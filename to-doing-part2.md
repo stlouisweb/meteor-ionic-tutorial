@@ -2,6 +2,8 @@
 ## Building the layout and first view
 Time to start making our app look like more of an app.
 
+#### Adding a navbar
+
 Open the file **client/includes/main_layout.html**, we're going to add some meteor-ionic navigation components to our main layout. modify the content within the ```{{#ionBody}} ``` component like so:
 
 ```html
@@ -65,4 +67,102 @@ Create a file in **client/includes/** called **todoing.scss** and the following 
 ```
 
 Now if we run the app again it should have a navbar across the top, and be starting to look a bit more like an app.
+
+#### Adding a slide-out (offcanvas) menu
+
+Things are looking better, but we don't really want a back button in our header, we would rather have a nice slide-out menu for navigation.
+
+First we need to modify our **main_template.html** file, by including the side menu layout helper blocks:
+
+```html
+<head>
+    <title>To-Doing - Agile PM for your life</title>
+</head>
+
+<template name="mainLayout">
+    {{#ionBody}}
+
+        {{#ionSideMenuContainer}}
+
+            {{> mainMenu}}
+
+            {{#ionSideMenuContent}}
+
+                {{> ionNavBar class="bar-positive"}}
+
+                {{#ionNavView}}
+                    {{> yield}}
+                {{/ionNavView}}
+
+            {{/ionSideMenuContent}}
+
+        {{/ionSideMenuContainer}}
+
+    {{/ionBody}}
+</template>
+```
+
+This sets up the template for side menus, we are going to break out the actual menu into its own template. Create a file **client/includes/sideMenuMain.html** and add the following code to it:
+
+```html
+<template name="mainMenuNavBar">
+
+{{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+        {{#if isAndroid}}
+            {{> ionIcon icon='android-more-vertical'}}
+        {{else}}
+            {{> ionIcon icon='navicon'}}
+        {{/if}}
+    </button>
+{{/contentFor}}
+{{#contentFor "headerTitle"}}
+    <h1 class="title">To-Doing</h1>
+{{/contentFor}}
+
+</template>
+
+<template name="mainMenu">
+    {{#ionSideMenus}}
+
+        {{#ionSideMenu}}
+            <div class="bar bar-header bar-dark">
+                <h1 class="title">Left Menu</h1>
+            </div>
+            <div class="content has-header">
+                <div class="list">
+                    <div class="item item-icon-right" data-ion-menu-close>
+                        Close Me {{> ionIcon icon="ios-arrow-right"}}
+                    </div>
+                </div>
+            </div>
+        {{/ionSideMenu}}
+
+    {{/ionSideMenus}}
+</template>
+```
+
+Here we've got two templates, **mainMenuNavBar** which sets up the navbar and goes in our view templates, and **mainMenu** which holds the actual menu content and goes into our **main_layout.html** template.
+
+Now we need to add the mainMenuNavBar template to **todo.html**:
+
+```html
+<template name="toDo">
+    {{> mainMenuNavBar}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <p>Hello Meteor + Ionic</p>
+        {{/ionContent}}
+    {{/ionView}}
+</template>
+
+```
+
+We should be good to go now, except we need to load the ionic icons by including them in **client/includes/todoing.scss** add the following line just below the first 
+import line:
+
+```scss
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+```
  
