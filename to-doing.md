@@ -1,7 +1,4 @@
-# Making an app with Meteor and Ionic
-
-#### Documenting the creation of to-doing, a simple app that merges the to-do list and time tracker.
-
+# Step 1
 ## Getting started (setting up the environment)
 To-doing is a fairly simple but interactive app that is data and user-centric, which is why we chose Meteor with its concept of reactivity to be the backbone of our app.
 To-doing should also work well across platforms, as both a mobile app and a web app. Ionic is an excellent mobile front-end framework that works well in the browser and Meteor has a proven Ionic integration package.
@@ -120,7 +117,7 @@ cd path/to/todoing
 meteor
 ```
 
-You can open the project in your browser by going to http://localhost:3000 (or another port if you specifed one when you started meteor), and you should see Hello World in the browser window.
+You can open the project in your browser by going to **http://localhost:3000** (or another port if you specifed one when you started meteor), and you should see "Hello World" in the browser window.
 
 If you inspect the code you should see no errors in the console and looking at the source will show that our meteor-ionic component blocks added a bunch of divs with specific classes to format our page properly for ionic. 
 
