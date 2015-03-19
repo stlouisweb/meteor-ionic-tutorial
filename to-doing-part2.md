@@ -167,3 +167,72 @@ import line:
 ```
  
 Now run the app again and you should have a pretty blue navbar with a super-cool slide-out menu.
+
+#### Menu Tweaks
+
+Now that we have our menu in place lets rearrange things a bit and start adding items that will eventually link to future views.
+
+in the **mainMenu** template replace ``` <h1>Left Menu</h1> ``` with this:
+
+```html
+<button class="white button-clear lg" data-ion-menu-close>{{> ionIcon icon="ios-close-outline"}}</button>
+```
+
+Here we are moving the close menu button to the header and changing the icon, you can see all the ionicons available [here](http://ionicons.com/).
+
+Next swap out the close menu item with this: 
+
+```html
+<div class="item item-icon-right">
+    Statistics {{> ionIcon icon="pie-graph"}}
+</div>
+<div class="item item-icon-right">
+    Settings {{> ionIcon icon="gear-a"}}
+</div>
+<div class="item item-icon-right">
+    Account {{> ionIcon icon="person"}}
+</div>
+```
+
+The main menu template should now look like this: 
+
+```html
+<template name="mainMenu">
+    {{#ionSideMenus}}
+
+        {{#ionSideMenu}}
+            <div class="bar bar-header bar-positive">
+                <button class="white button-clear lg" data-ion-menu-close>{{> ionIcon icon="ios-close-outline"}}</button>
+            </div>
+            <div class="content has-header">
+                <div class="list">
+                    <div class="item item-icon-right">
+                        Statistics {{> ionIcon icon="pie-graph"}}
+                    </div>
+                    <div class="item item-icon-right">
+                        Settings {{> ionIcon icon="gear-a"}}
+                    </div>
+                    <div class="item item-icon-right">
+                        Account {{> ionIcon icon="person"}}
+                    </div>
+                </div>
+            </div>
+        {{/ionSideMenu}}
+
+    {{/ionSideMenus}}
+</template>
+```
+
+Now we just need to add some custom css classes that we used for the close button to our scss file. Open up **client/includes/toding.scss** and add the following:
+
+```scss
+.white {
+	color: #fff !important;
+}
+.lg {
+	font-size: 28px;
+	line-height: 0;
+}
+```
+
+Now run the app again and the menu should be starting to look like a menu, Yay!
