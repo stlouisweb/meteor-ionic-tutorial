@@ -62,7 +62,7 @@ Add the following to **main_layout.html**:
 </template>
 ```
 
-This is our main template file, all our other templates will be inserted into the ``` {{>yield}} ``` block. This is an example example of Meteor's template inclusion syntax.
+This is our main template file, all our other templates will be inserted into the ``` {{>yield}} ``` block. This is an example of Meteor's template inclusion syntax.
 
 ``` {{#ionBody}} ``` is a meteor-ionic component that sets  up the necessary wrappers for our ionic templates.
 
@@ -80,7 +80,7 @@ add the following to **todo.html**:
 
 ``` {{#ionContent}} ``` is another meteor-ionic component, you should generally wrap all of your templates in an ``` ionConent ``` block.
 
-Now it's time to configure the router. open up the **routes.js** file we created a the root of the project and add the following to configure the router to use our **mainLayout** template by default:
+Now it's time to configure the router. open up the **routes.js** file we created at the root of the project and add the following to configure the router to use our **mainLayout** template by default:
 
 ```javascript
 Router.configure({
@@ -96,6 +96,22 @@ Router.map(function() {
 		path: '/'
 	});
 }); 
+```
+
+routes.js should look like this:
+
+```javascript
+Router.configure({
+	layoutTemplate: 'mainLayout'
+});
+
+Router.map(function() {
+	this.route('toDo', {
+		path: '/'
+	});
+}); 
+
+```
 
 
    
