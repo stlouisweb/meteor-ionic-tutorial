@@ -21,7 +21,7 @@ This file is going to be nearly identical to the **main_layout.html** file, so y
 ```
 then modify the contents of ``` {{#ionNavView}} ``` like so:
 
-```html
+```handlebars
 {{#ionNavView}}
 	{{> mainMenuNavBar}}
 	{{> yield}}
@@ -31,7 +31,7 @@ then modify the contents of ``` {{#ionNavView}} ``` like so:
 
 When your done **client/includes/tab_layout.html** should look like this:
 
-```html
+```spacebars
 <head>
     <title>To-Doing - Agile PM for your life</title>
 </head>
