@@ -61,3 +61,23 @@ When your done **client/includes/tab_layout.html** should look like this:
 </template>
 
 ```
+
+#### Adding the tabs
+
+Now we'll add a template for displaying the tab menu
+
+Create a file **client/includes/todo-tabs.html** and add the following code:
+
+```handlebars
+<template name="toDoTabs">
+        {{#ionTabs style="ios" class="tabs-background-calm tabs-color-light tabs-top tabs-icon-left"}}
+            {{> ionTab title="To-Do" path="tabs.todo" iconOff="clipboard" iconOn="clipboard"}}
+            {{> ionTab title="Doing" path="tabs.doing" iconOff="clock" iconOn="clock"}}
+            {{> ionTab title="Done" path="tabs.done" iconOff="checkmark-round" iconOn="checkmark-round"}}
+        {{/ionTabs}}
+</template>
+```
+
+What this is doing is adding all of the necessary markup and bindings for [Ionic tabs](http://ionicframework.com/docs/api/directive/ionTabs/), we are also specifying some special css classes and icons to make it look nice.
+
+
