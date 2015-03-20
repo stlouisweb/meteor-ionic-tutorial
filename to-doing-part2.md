@@ -1,5 +1,5 @@
 # Step 2
-## Building the layout and first view
+## Building the layout and navigation
 Time to start making our app look like more of an app.
 
 #### Adding a navbar

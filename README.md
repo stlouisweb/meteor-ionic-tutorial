@@ -6,4 +6,7 @@
 Setting up our development environment and getting started with meteor-ionic.
 
 ###[Tutorial step 2](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing-part2.md)
-Building a mobile friendly view with meteor-ionic.
+Building a mobile friendly navigation menu.
+
+###[Tutorial step 3](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing-part3.md)
+Creating a tabbed view.
