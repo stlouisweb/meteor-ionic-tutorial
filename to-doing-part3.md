@@ -31,7 +31,7 @@ then modify the contents of ``` {{#ionNavView}} ``` like so:
 
 When your done **client/includes/tab_layout.html** should look like this:
 
-```spacebars
+```handlebars
 <head>
     <title>To-Doing - Agile PM for your life</title>
 </head>
