@@ -80,4 +80,30 @@ Create a file **client/includes/todo-tabs.html** and add the following code:
 
 What this is doing is adding all of the necessary markup and bindings for [Ionic tabs](http://ionicframework.com/docs/api/directive/ionTabs/), we are also specifying some special css classes and icons to make it look nice.
 
+#### Adding the tab content
+
+Now we can add templates that correspond to each of the tabs views.
+
+Create a new file **client/views/to-do/tabs_todo.html** and add the following content:
+
+```handlebars
+<template name="tabsTodo">
+    {{#ionView}}
+        {{> mainMenuNavBar}}
+
+        {{#ionContent class="tab-padding"}}
+            <h1>To Do</h1>
+        {{/ionContent}}
+
+    {{/ionView}}
+</template>
+```
+
+Now create two more files **client/views/doing/tabs_doing.html** 
+
+and 
+
+**client/views/done/tabs_done.html**
+
+And copy the same code from **tabs_todo.html** changing the template name and the content of the ```<h1>``` tag to "Doing" and "Done" in the corresponding templates.
 
