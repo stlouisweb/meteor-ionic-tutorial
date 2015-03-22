@@ -10,3 +10,6 @@ Building a mobile friendly navigation menu.
 
 ###[Tutorial step 3](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing-part3.md)
 Creating a tabbed view.
+
+###[Tutorial step 4](https://github.com/stlouisweb/meteor-ionic-tutorial/blob/master/to-doing-part4.md)
+Adding user accounts
