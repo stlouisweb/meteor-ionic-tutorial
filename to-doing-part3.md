@@ -10,7 +10,7 @@ For this mode we will be using a tabbed interface with [Ionic tabs](https://gith
 
 #### Creating a new layout 
 
-``` {{> ionTab}} ``` templates don't place so nice with ``` {{#ionContent}} ``` components so we are going to need to set up another layout template. This is one of the nice things about Meteor and iron:router, is that you can have multiple layout templates and easily switch between them depending on the current route, and in Meteor any template can contain any other templates.
+``` {{> ionTab}} ``` templates don't play so nice with ``` {{#ionContent}} ``` components so we are going to need to set up another layout template. This is one of the nice things about Meteor and iron:router, is that you can have multiple layout templates and easily switch between them depending on the current route, and in Meteor any template can contain any other templates.
 
 In **client/includes/** create a new file called **tab_layout.html**
 
@@ -106,4 +106,15 @@ and
 **client/views/done/tabs_done.html**
 
 And copy the same code from **tabs_todo.html** changing the template name and the content of the ```<h1>``` tag to "Doing" and "Done" in the corresponding templates.
+
+Now we should have some nifty tabs, lets just tweak the style of the tabs a little bit. Add the following to **client/includes/todoing.scss**
+
+```scss
+.tabs-icon-left>.tabs .tab-item {
+  font-size: 16px;
+  line-height: 2.5;
+}
+.tabs-icon-left>.tabs .tab-item .icon {
+  line-height: 1;
+}
 
